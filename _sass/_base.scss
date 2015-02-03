@@ -14,13 +14,14 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
+    -webkit-text-size-adjust: 100%;
+    background-color: $background-color;
+    color: $text-color;
     font-family: $base-font-family;
     font-size: $base-font-size;
-    line-height: $base-line-height;
     font-weight: 300;
-    color: $text-color;
-    background-color: $background-color;
-    -webkit-text-size-adjust: 100%;
+    line-height: $base-line-height;
+    overflow-y: scroll;
 }
 
 
@@ -82,20 +83,23 @@ li {
 h1, h2, h3, h4, h5, h6 {
     font-family: $header-font-family;
     font-weight: 600;
+    letter-spacing: -1px;
 }
 
-
+h1 {
+    font-size: 1.8em;
+}
 
 /**
  * Links
  */
 a {
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
     color: $brand-color;
     text-decoration: none;
 
     &:hover {
-        border-bottom-color: initial;
+        border-bottom-color: $brand-color;
     }
 }
 
@@ -124,14 +128,16 @@ blockquote {
  */
 pre,
 code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
+    background-color: #49483e;
     border-radius: 3px;
-    background-color: #eef;
+    color: #fff;
+    font-family: $code-font-family;
+    font-size: $small-font-size;
+    vertical-align: bottom;
 }
 
 code {
-    padding: 1px 5px;
+    padding: 2px 5px;
 }
 
 pre {
@@ -139,7 +145,6 @@ pre {
     overflow-x: scroll;
 
     > code {
-        border: 0;
         padding-right: 0;
         padding-left: 0;
     }
@@ -178,24 +183,5 @@ pre {
         content: "";
         display: table;
         clear: both;
-    }
-}
-
-
-
-/**
- * Icons
- */
-.icon {
-
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-
-        path {
-            fill: $grey-color;
-        }
     }
 }

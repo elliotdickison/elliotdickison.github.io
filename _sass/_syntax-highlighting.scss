@@ -2,7 +2,7 @@
  * Syntax highlighting styles
  */
 .highlight {
-    background: #49483e;
+    background: $code-background-color;
     border-radius: 3px;
     @extend %vertical-rhythm;
     .c { color: #8c8a77; } /* Comment */

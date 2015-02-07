@@ -2,9 +2,8 @@
  * Site header
  */
 .site-header {
-    border-top: 4px solid $brand-color;
-    line-height: 75px;
-    padding: ($spacing-unit / 2) 0;
+    padding: $spacing-unit 0;
+    text-align: center;
     text-transform: lowercase;
 
     // Positioning context for the mobile navigation icon
@@ -17,70 +16,15 @@
 
 .site-title {
     border-bottom: none;
-    float: left;
-    margin-bottom: 0;
 
     img {
         border-radius: 100%;
-        margin-right: 0.5rem;
-    }
-}
-
-.site-nav {
-    float: right;
-
-    .menu-icon {
-        display: none;
+        border: 2px solid transparent;
+        padding: 2px;
     }
 
-    .page-link {
-        color: $text-color;
-        line-height: $base-line-height;
-        margin-left: 20px;
-    }
-
-    @include media-query($on-palm) {
-        position: absolute;
-        top: 9px;
-        right: 30px;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
-        border-radius: 5px;
-        text-align: right;
-
-        .menu-icon {
-            display: block;
-            float: right;
-            width: 36px;
-            height: 26px;
-            line-height: 0;
-            padding-top: 10px;
-            text-align: center;
-
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $grey-color-dark;
-                }
-            }
-        }
-
-        .trigger {
-            clear: both;
-            display: none;
-        }
-
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        .page-link {
-            display: block;
-            padding: 5px 10px;
-        }
+    &:hover img {
+        border-color: $brand-color;
     }
 }
 
@@ -91,21 +35,14 @@
  */
 
 .site-footer {
-    border-top: 4px solid $brand-color;
-    margin-top: $spacing-unit;
     padding: $spacing-unit 0;
 }
 
 .contact-links {
+    float: right;
     list-style: none;
     margin-left: 0;
     text-transform: lowercase;
-    font-weight: 600;
-    float: right;
-
-    a {
-        font-weight: 300;
-    }
 }
 
 
@@ -131,6 +68,10 @@
 .post-list {
     list-style: none;
     margin-left: 0;
+
+    .post-title {
+        float: left;
+    }
 }
 
 .post-list-item {
@@ -139,9 +80,10 @@
 
 .post-meta {
     color: $grey-color;
-    display: block;
     font-size: $small-font-size;
-    text-indent: $spacing-unit;
+    font-weight: 300;
+    font-family: $base-font-family;
+    text-align: center;
 }
 
 .post-link {
@@ -154,4 +96,5 @@
 
 .post-title {
     line-height: 1;
+    text-align: center;
 }

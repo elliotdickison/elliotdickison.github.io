@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 /**
  * Reset some basic elements
  */
@@ -109,12 +113,11 @@ a {
  * Blockquotes
  */
 blockquote {
+    border-left: 4px solid $brand-color;
     color: $grey-color;
-    border-left: 4px solid $grey-color-light;
-    padding-left: $spacing-unit / 2;
-    font-size: 18px;
-    letter-spacing: -1px;
+    font-size: 1.2em;
     font-style: italic;
+    padding-left: $spacing-unit / 2;
 
     > :last-child {
         margin-bottom: 0;
@@ -128,12 +131,12 @@ blockquote {
  */
 pre,
 code {
-    background-color: #49483e;
+    background-color: $code-background-color;
     border-radius: 3px;
     color: #fff;
     font-family: $code-font-family;
     font-size: $small-font-size;
-    vertical-align: bottom;
+    vertical-align: middle;
 }
 
 code {
@@ -142,7 +145,7 @@ code {
 
 pre {
     padding: 8px 12px;
-    overflow-x: scroll;
+    overflow-x: auto;
 
     > code {
         padding-right: 0;
@@ -156,19 +159,14 @@ pre {
  * Wrapper
  */
 .wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
     @extend %clearfix;
 
+    margin: 0 auto;
+    max-width: $content-width;
+    padding: 0 $spacing-unit;
+
     @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
+        padding: 0 ($spacing-unit / 2);
     }
 }
 

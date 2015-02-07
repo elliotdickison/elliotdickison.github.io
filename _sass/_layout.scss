@@ -4,27 +4,20 @@
 .site-header {
     padding: $spacing-unit 0;
     text-align: center;
-    text-transform: lowercase;
-
-    // Positioning context for the mobile navigation icon
-    position: relative;
-
-    a {
-        color: inherit;
-    }
 }
 
 .site-title {
-    border-bottom: none;
-
     img {
         border-radius: 100%;
         border: 2px solid transparent;
         padding: 2px;
     }
 
-    &:hover img {
-        border-color: $brand-color;
+    &:hover {
+        box-shadow: none;
+        img {
+            border-color: $brand-color;
+        }
     }
 }
 
@@ -35,14 +28,29 @@
  */
 
 .site-footer {
+    font-size: $small-font-size;
     padding: $spacing-unit 0;
+
+    .wrapper:before {
+        border-top: 2px solid $grey-color-light;
+        content: '';
+        display: block;
+        margin: 0 auto ($spacing-unit * 2) auto;
+        width: 50%;
+    }
 }
 
 .contact-links {
     float: right;
     list-style: none;
     margin-left: 0;
+    max-width: 50%;
     text-transform: lowercase;
+}
+
+.bio {
+    float: left;
+    max-width: 50%;
 }
 
 
@@ -70,7 +78,13 @@
     margin-left: 0;
 
     .post-title {
+        text-align: right;
+        line-height: 1.4;
+    }
+
+    .post-link {
         float: left;
+        text-align: left;
     }
 }
 
@@ -80,9 +94,9 @@
 
 .post-meta {
     color: $grey-color;
+    font-family: $base-font-family;
     font-size: $small-font-size;
     font-weight: 300;
-    font-family: $base-font-family;
     text-align: center;
 }
 
@@ -95,6 +109,7 @@
 }
 
 .post-title {
-    line-height: 1;
+    line-height: 1.2;
+    margin-bottom: $spacing-unit / 2;
     text-align: center;
 }

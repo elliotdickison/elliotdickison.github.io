@@ -40,19 +40,28 @@
     }
 }
 
+.bio {
+    float: left;
+    max-width: 50%;
+
+    @include media-query($on-mobile) {
+        float: none;
+        max-width: none;
+    }
+}
+
 .contact-links {
     float: right;
     list-style: none;
     margin-left: 0;
     max-width: 50%;
     text-transform: lowercase;
+    
+    @include media-query($on-mobile) {
+        float: none;
+        max-width: none;
+    }
 }
-
-.bio {
-    float: left;
-    max-width: 50%;
-}
-
 
 
 /**
@@ -77,14 +86,9 @@
     list-style: none;
     margin-left: 0;
 
-    .post-title {
-        text-align: right;
-        line-height: 1.4;
-    }
-
-    .post-link {
-        float: left;
-        text-align: left;
+    .post-meta {
+        float: right;
+        margin-top: 0.7em;
     }
 }
 
@@ -97,7 +101,6 @@
     font-family: $base-font-family;
     font-size: $small-font-size;
     font-weight: 300;
-    text-align: center;
 }
 
 .post-link {
@@ -105,11 +108,11 @@
 }
 
 .post-header {
-    margin-bottom: $spacing-unit;
+    margin-bottom: $spacing-unit * 1.5;
+    text-align: center;
 }
 
 .post-title {
-    line-height: 1.2;
+    line-height: 1.4;
     margin-bottom: $spacing-unit / 2;
-    text-align: center;
 }

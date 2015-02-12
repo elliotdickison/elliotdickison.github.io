@@ -2,7 +2,7 @@
  * Site header
  */
 .site-header {
-    padding: $spacing-unit 0;
+    padding: ($spacing-unit * 1.5) 0 $spacing-unit 0;
     text-align: center;
 }
 
@@ -11,6 +11,13 @@
         border-radius: 100%;
         border: 2px solid transparent;
         padding: 2px;
+        width: $gravatar-size;
+        height: $gravatar-size;
+
+        @include media-query($on-mobile) {
+            width: $gravatar-size-mobile;
+            height: $gravatar-size-mobile;
+        }
     }
 
     &:hover {
@@ -88,7 +95,6 @@
 
     .post-meta {
         float: right;
-        margin-top: 0.7em;
     }
 }
 
@@ -113,6 +119,6 @@
 }
 
 .post-title {
-    line-height: 1.4;
+    line-height: 1.4em;
     margin-bottom: $spacing-unit / 2;
 }

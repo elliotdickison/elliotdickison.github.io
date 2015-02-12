@@ -7,6 +7,9 @@ url: "http://elliotdickison.com" # the base hostname & protocol for your site
 twitter_username: elliotdickison
 github_username:  elliotdickison
 gravatar: 5a4ad376a72eeb6fd3a59400684d54bf
+gravatar_size: 140
 
 # Build settings
 markdown: kramdown
+
+permalink: /:title

@@ -9,41 +9,40 @@
 $header-font-family: "ff-tisa-web-pro", "Georgia", serif;
 $base-font-family: "skolar", "Georgia", serif;
 $code-font-family: "Courier", monospace;
-$base-font-size:   22px;
+$base-font-size: 22px;
 $mobile-font-size: 19px;
-$small-font-size:  $base-font-size * 0.8;
+$small-font-size: $base-font-size * 0.85;
+$code-font-size: $base-font-size * 0.75;
 $base-line-height: 1.6;
 
 $gravatar-size: 78px;
 $gravatar-size-mobile: 63px;
 
-$spacing-unit:     1.3rem;
+$spacing-unit: 1.3rem;
 
-$text-color:       #49483e;
+$text-color: #49483e;
 $background-color: #fff;
 $code-background-color: #49483e;
-$brand-color:      #da5b54;
+$brand-color: #da5b54;
 
-$grey-color:       #828282;
+$grey-color: #828282;
 $grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+$grey-color-dark: darken($grey-color, 25%);
 
 // Width of the content area
 $content-width:	700px;
 
-$on-mobile:	550px;
 
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
+$on-mobile:	550px;
+@mixin media-query($on-device-type) {
+    @media screen and (max-width: $on-device-type) {
         @content;
     }
 }
 
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout",
-        "syntax-highlighting"
+    "base",
+    "layout",
+    "syntax-highlighting"
 ;

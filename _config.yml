@@ -1,7 +1,7 @@
 # Site settings
 title: Elliot Dickison
 email: your-email@domain.com
-description: > # web dev...
+description: "Hey &mdash; I'm Elliot Dickison, a web developer currently working at Amazon.com in Seattle. I love to ski and spend time outdoors with my awesome wife and daughter."
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://elliotdickison.com" # the base hostname & protocol for your site
 twitter_username: elliotdickison

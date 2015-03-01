@@ -16,7 +16,7 @@ console.log(~2);  // logs -3
 
 {% highlight ruby linenos=table %}
 def print_hi(name)
-  puts "Hi, #{name}"
+  puts "Hi, #{name}" if this_var && that_var && the_other_var
 end
 print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.

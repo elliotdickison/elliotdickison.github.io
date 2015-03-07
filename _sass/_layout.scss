@@ -20,7 +20,8 @@
         }
     }
 
-    &:hover {
+    &:hover,
+    &:active {
         box-shadow: none;
         img {
             border-color: $brand-color;

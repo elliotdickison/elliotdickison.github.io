@@ -43,7 +43,7 @@
 .site-footer {
     font-size: $font-size-small;
     overflow: hidden;
-    padding: $spacing-unit 0;
+    margin: ($spacing-unit * 2) 0 $spacing-unit;
 
     .wrapper:before {
         border-top: 2px solid $background-color-dark;

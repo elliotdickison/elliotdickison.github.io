@@ -1,12 +1,13 @@
 # Custom site settings
 title: Elliot Dickison
-email: your-email@domain.com
-description: "Hey &mdash; I'm Elliot Dickison, a web developer currently working at Amazon.com in Seattle. I love to ski and spend time outdoors with my awesome wife and daughter."
+email: ejdickison@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://elliotdickison.com" # the base hostname & protocol for your site
 twitter_username: elliotdickison
 github_username:  elliotdickison
-gravatar: 5a4ad376a72eeb6fd3a59400684d54bf
+google_plus_username:  elliotdickison
+facebook_username: elliotdickison
+gravatar_hash: 5a4ad376a72eeb6fd3a59400684d54bf
 gravatar_size: 140
 
 # Build settings

@@ -1,8 +1,20 @@
 /**
+ * Wrapper
+ */
+
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $content-width;
+    padding: 0 ($spacing-unit / 2);
+}
+
+/**
  * Site header
  */
+
 .site-header {
-    padding: ($spacing-unit * 1.5) 0 $spacing-unit 0;
+    margin-top: $spacing-unit * 1.5;
     text-align: center;
 }
 
@@ -13,34 +25,28 @@
         padding: 2px;
         width: $gravatar-size;
         height: $gravatar-size;
-
-        @include media-query($on-mobile) {
-            width: $gravatar-size-mobile;
-            height: $gravatar-size-mobile;
-        }
     }
 
     &:hover,
     &:active {
         box-shadow: none;
         img {
-            border-color: $brand-color;
+            border-color: $theme-color;
         }
     }
 }
-
-
 
 /**
  * Site footer
  */
 
 .site-footer {
-    font-size: $small-font-size;
+    font-size: $font-size-small;
+    overflow: hidden;
     padding: $spacing-unit 0;
 
     .wrapper:before {
-        border-top: 2px solid $grey-color-light;
+        border-top: 2px solid $background-color-dark;
         content: '';
         display: block;
         margin: 0 auto ($spacing-unit * 2) auto;
@@ -61,16 +67,16 @@
 .contact-links {
     float: right;
     list-style: none;
-    margin-left: 0;
+    margin: 0;
     max-width: 50%;
     text-transform: lowercase;
     
     @include media-query($on-mobile) {
         float: none;
+        margin-top: $spacing-unit;
         max-width: none;
     }
 }
-
 
 /**
  * Page content
@@ -83,8 +89,6 @@
 .page-heading {
     font-size: 20px;
 }
-
-
 
 /**
  * Posts
@@ -100,14 +104,10 @@
     }
 }
 
-.post-list-item {
-    margin-bottom: $spacing-unit;
-}
-
 .post-meta {
-    color: $grey-color;
-    font-family: $base-font-family;
-    font-size: $small-font-size;
+    color: $text-color-secondary;
+    font-family: $font-family;
+    font-size: $font-size-small;
     font-weight: 300;
 }
 
@@ -116,11 +116,9 @@
 }
 
 .post-header {
-    margin-bottom: $spacing-unit * 1.5;
     text-align: center;
 }
 
 .post-title {
     line-height: 1.4em;
-    margin-bottom: $spacing-unit / 2;
 }

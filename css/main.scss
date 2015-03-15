@@ -1,43 +1,47 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# http://jekyllrb.com/docs/frontmatter/
 ---
 @charset "utf-8";
 
+/* fonts */
+$font-family-code: "Courier New", monospace;
+$font-family-header: "ff-tisa-web-pro", "Georgia", serif;
+$font-family: "skolar", "Georgia", serif;
+$font-size-code: 0.75rem;
+$font-size-mobile: 20px;
+$font-size-small: 0.85rem;
+$font-size: 22px;
+$font-weight: 400;
+$line-height: 1.6;
 
+/* colors */
+$background-color-code: #49483e;
+$background-color-dark: #e4e4e4;
+$background-color: #fff;
+$theme-color: #da5b54;
+$text-color-secondary: #828282;
+$text-color: #49483e;
 
-// Our variables
-$header-font-family: "ff-tisa-web-pro", "Georgia", serif;
-$base-font-family: "skolar", "Georgia", serif;
-$code-font-family: "Courier", monospace;
-$base-font-size: 23px;
-$mobile-font-size: 20px;
-$small-font-size: 0.85rem;
-$code-font-size: 0.75rem;
-$base-line-height: 1.7;
-
+/* dimensions */
+$content-width: 750px;
 $gravatar-size: 78px;
-$gravatar-size-mobile: 63px;
-
 $spacing-unit: 1.3rem;
 
-$text-color: #49483e;
-$background-color: #fff;
-$code-background-color: #49483e;
-$brand-color: #da5b54;
-
-$grey-color: #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark: darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:	700px;
-
-
+/* media query helper */
 $on-mobile:	550px;
 @mixin media-query($on-device-type) {
     @media screen and (max-width: $on-device-type) {
         @content;
     }
+}
+
+/* prefixer */
+$prefixes: webkit moz ms o;
+@mixin prefix($property, $value){
+    @each $prefix in $prefixes {
+        -#{$prefix}-#{$property}: #{$value};
+    }
+    #{$property}: #{$value};
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)

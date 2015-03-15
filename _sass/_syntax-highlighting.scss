@@ -1,10 +1,39 @@
-/**
- * Syntax highlighting styles
- */
-.highlight {
-    background: $code-background-color;
+.highlighttable {
+    background-color: $background-color-code;
+    border-collapse: collapse;
     border-radius: 3px;
-    @extend %vertical-rhythm;
+    border-spacing: 0;
+    overflow: hidden;
+    table-layout: fixed;
+    width: 100%;
+
+    pre {
+        padding-left: 0;
+    }
+
+    code {
+        color: #8c8a77;
+    }
+
+    .linenos {
+        padding: 0;
+        text-align: right;
+        width: 1.85rem;
+
+        pre {
+            padding-right: 12px;
+        }
+    }
+
+    .code {
+        padding: 0;
+        width: 100%; 
+    }
+}
+
+.highlight {
+    background: $background-color-code;
+    border-radius: 3px;
     .c { color: #8c8a77; } /* Comment */
     .err { background-color: #1e0010; color: #960050; } /* Error */
     .k { color: #66d9ef; } /* Keyword */

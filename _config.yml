@@ -1,4 +1,4 @@
-# Site settings
+# Custom site settings
 title: Elliot Dickison
 email: your-email@domain.com
 description: "Hey &mdash; I'm Elliot Dickison, a web developer currently working at Amazon.com in Seattle. I love to ski and spend time outdoors with my awesome wife and daughter."
@@ -11,5 +11,8 @@ gravatar_size: 140
 
 # Build settings
 markdown: kramdown
+sass:
+    style: :compressed
 
+# Blog posts get first-class urls
 permalink: /:title

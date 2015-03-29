@@ -95,20 +95,27 @@ a {
 
 a:hover,
 a:active {
-    /* Underline with descenders cleared */
+    /* Underline 3px up from the bottom of the em box */
     box-shadow: inset 0 -3px 0 0 $background-color, inset 0 calc(-4px) 0 0 $theme-color;
-    text-shadow: $background-color 3px 0, $background-color -3px 0,
+    
+    /* Clear descenders */
+    text-shadow: 
+        $background-color 3px -1px, $background-color -3px -1px,
+        $background-color 2px -1px, $background-color -2px -1px,
+        $background-color 1px -1px, $background-color -1px -1px,
+        $background-color 3px 0, $background-color -3px 0,
         $background-color 2px 0, $background-color -2px 0,
         $background-color 1px 0, $background-color -1px 0,
         $background-color 3px 1px, $background-color -3px 1px,
         $background-color 2px 1px, $background-color -2px 1px,
         $background-color 1px 1px, $background-color -1px 1px,
-        $background-color 0 1px;
+        $background-color 0 -1px, $background-color 0 1px;
 }
 
 h1, h2, h3, h4, h5, h6 {
     a:hover,
     a:active {
+        /* Underline 6px up from the bottom of the em box */
         box-shadow: inset 0 -6px 0 0 $background-color, inset 0 calc(-7px) 0 0 $theme-color;
     }
 }

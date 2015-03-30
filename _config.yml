@@ -1,14 +1,20 @@
-# Custom site settings
 title: Elliot Dickison
 email: ejdickison@gmail.com
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://elliotdickison.com" # the base hostname & protocol for your site
+
+baseurl: ""
+url: "http://elliotdickison.com"
+
 twitter_username: elliotdickison
 github_username:  elliotdickison
 google_plus_username:  elliotdickison
 facebook_username: elliotdickison
+app_net_username: elliotdickison
+
 gravatar_hash: 5a4ad376a72eeb6fd3a59400684d54bf
 gravatar_size: 140
+
+estimate_read_time: true
+words_per_minute: 200
 
 # Build settings
 markdown: kramdown

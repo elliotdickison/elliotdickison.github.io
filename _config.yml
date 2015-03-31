@@ -13,6 +13,15 @@ app_net_username: elliotdickison
 gravatar_hash: 5a4ad376a72eeb6fd3a59400684d54bf
 gravatar_size: 140
 
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Elliot Dickison"
+
 estimate_read_time: true
 words_per_minute: 200
 

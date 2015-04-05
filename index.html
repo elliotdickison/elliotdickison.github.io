@@ -8,7 +8,7 @@ title: Blog
         <li class="post-list-item h-entry">
             <h2 class="post-title">
                 <span class="post-meta"><span class="dt-published" datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</span></span>
-                <a class="post-link p-name u-url" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                <a class="post-link p-name u-url" href="{{ post.url | prepend: site.url }}">{{ post.title }}</a>
             </h2>
         </li>
     {% endfor %}

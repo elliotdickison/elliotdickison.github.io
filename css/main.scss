@@ -27,7 +27,7 @@ $gravatar-size: 78px;
 $spacing-unit: 1.3rem;
 
 /* media query helper */
-$on-mobile:	550px;
+$on-mobile:	$content-width;
 @mixin media-query($on-device-type) {
     @media screen and (max-width: $on-device-type) {
         @content;

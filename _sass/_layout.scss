@@ -130,3 +130,25 @@
 .post-title {
     line-height: 1.4em;
 }
+
+.post-mentions {
+    font-size: $font-size-small;
+
+    &:before {
+        border-top: 2px solid $background-color-dark;
+        content: '';
+        display: block;
+        margin: 0 auto ($spacing-unit * 2) auto;
+        width: 50%;
+    }
+}
+
+.post-mentions ul {
+    list-style: none;
+    margin: 0;
+}
+
+.post-mention-date {
+    color: $text-color-secondary;
+    float: right;
+}

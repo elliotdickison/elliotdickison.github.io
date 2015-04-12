@@ -108,6 +108,10 @@
     }
 }
 
+.post-list-item + .post-list-item {
+    margin-top: $spacing-unit;
+}
+
 .post-meta {
     color: $text-color-secondary;
     font-family: $font-family;
@@ -132,23 +136,31 @@
 }
 
 .post-mentions {
+    margin-top: 0;
+}
+
+.post-mentions ul {
     font-size: $font-size-small;
+    list-style: none;
+    margin: 0;
 
     &:before {
         border-top: 2px solid $background-color-dark;
         content: '';
         display: block;
-        margin: 0 auto ($spacing-unit * 2) auto;
+        margin: ($spacing-unit * 2) auto;
         width: 50%;
     }
-}
-
-.post-mentions ul {
-    list-style: none;
-    margin: 0;
 }
 
 .post-mention-date {
     color: $text-color-secondary;
     float: right;
+}
+
+.post-footnote {
+    color: $text-color-secondary;
+    display: block;
+    font-size: $font-size-small;
+    margin-top: $spacing-unit / 2;
 }

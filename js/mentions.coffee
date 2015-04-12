@@ -26,7 +26,7 @@ renderMentions = (mentions) ->
     html += '</ul>'
 
 insertMentions = (data) ->
-    $('.js-mentions').html(renderMentions(data.links))
+    $('.js-mentions').html(renderMentions(data.links)) if data.links.length
 
 fetchMentions = (target) ->
     target = target.replace /^(https?:)?[\/]+|[\/]+$/g, ''

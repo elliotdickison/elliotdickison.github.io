@@ -39,7 +39,8 @@ body * + * {
     margin-top: $spacing-unit;
 }
 
-li + li {
+li + li,
+pre * + * {
     margin-top: 0;
 }
 

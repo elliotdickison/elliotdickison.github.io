@@ -30,5 +30,7 @@ markdown: kramdown
 sass:
     style: :compressed
 
+highlighter: pygments
+
 # Blog posts get first-class urls
 permalink: /:title

@@ -1,0 +1,14 @@
+{% if site.estimate_read_time %}
+    {% assign estimated_read_time = content | strip_html | number_of_words | append: '.0' | divided_by: site.words_per_minute %}
+    {% comment %}
+    Everything below here is a hack to round the read time. This is messy, but
+    liquid doesn't have these filters build in and github pages doesn't
+    currently (4/5/15) allow plugins.
+    {% endcomment %}
+    {% assign estimated_read_time_fraction = estimated_read_time | append: '' | split: '.' | last | prepend: '0.' | times: 1.0 %}
+    {% if estimated_read_time_fraction >= 0.5 %}
+        {% assign estimated_read_time = estimated_read_time | plus: 1 %}
+    {% endif %}
+    {% assign estimated_read_time = estimated_read_time | append: '' | split: '.' | first %}
+    {% if estimated_read_time != '0' %} • {{ estimated_read_time }} min read{% endif %}
+{% endif %}

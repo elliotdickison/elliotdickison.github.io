@@ -1,23 +1,10 @@
 ---
 layout: default
 ---
-{% if site.estimate_read_time %}
-    {% assign estimated_read_time = content | strip_html | number_of_words | append: '.0' | divided_by: site.words_per_minute %}
-    {% comment %}
-    Everything below here is a hack to round the read time (and enforce a
-    minimum of 1). This is messy, but liquid doesn't have these filters build in
-    and github pages doesn't currently (4/5/15) allow plugins.
-    {% endcomment %}
-    {% assign estimated_read_time_fraction = estimated_read_time | append: '' | split: '.' | last | prepend: '0.' | times: 1.0 %}
-    {% if estimated_read_time_fraction >= 0.5 || estimated_read_time < 0.5 %}
-        {% assign estimated_read_time = estimated_read_time | plus: 1 %}
-    {% endif %}
-    {% assign estimated_read_time = estimated_read_time | append: '' | split: '.' | first %}
-{% endif %}
 <div class="post h-entry">
     <header class="post-header">
         <h1 class="post-title p-name">{{ page.title }}</h1>
-        <p class="post-meta"><span class="dt-published" datetime="{{ page.date }}">{{ page.date | date: "%b %-d, %Y" }}</span>{% if estimated_read_time %} • {{ estimated_read_time }} min read{% endif %}{% if page.author %}<span class="post-author"> • <span class="p-author h-card">{{ page.author }}</span></span>{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+        <p class="post-meta"><span class="dt-published" datetime="{{ page.date }}">{{ page.date | date: "%b %-d, %Y" }}</span>{% include post-read-time.html %}{% if page.author %}<span class="post-author"> • <span class="p-author h-card">{{ page.author }}</span></span>{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
     </header>
     <article class="post-content e-content">
         {{ content }}

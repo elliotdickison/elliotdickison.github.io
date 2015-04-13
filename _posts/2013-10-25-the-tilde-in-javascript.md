@@ -1,6 +1,6 @@
 ---
-title:  "The Tilde In JavaScript"
-date:   2013-10-25 16:38:54
+title: "The Tilde In JavaScript"
+date: 2013-10-25 16:38:54
 tags: code
 ---
 Here's a little tidbit I learned recently: the tilde "~" is an operator in JS. Who knew? It turns out a lot of people, actually, but since I didn't find out until way late in the game I thought I would help spread the word.

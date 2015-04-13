@@ -3,7 +3,7 @@
     {% comment %}
     Everything below here is a hack to round the read time. This is messy, but
     liquid doesn't have these filters build in and github pages doesn't
-    currently (4/5/15) allow plugins.
+    currently (4/5/15) allow plugins so a custom filter isn't an option.
     {% endcomment %}
     {% assign estimated_read_time_fraction = estimated_read_time | append: '' | split: '.' | last | prepend: '0.' | times: 1.0 %}
     {% if estimated_read_time_fraction >= 0.5 %}

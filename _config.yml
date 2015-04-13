@@ -23,7 +23,7 @@ defaults:
       author: "Elliot Dickison"
 
 estimate_read_time: true
-words_per_minute: 200
+words_per_minute: 180
 
 # Build settings
 markdown: kramdown

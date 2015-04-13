@@ -1,0 +1,5 @@
+<div class="embedded-video-container">
+    {% if include.source == 'youtube' %}
+    <iframe src="//www.youtube.com/embed/{{ include.key }}" frameborder="0" allowfullscreen></iframe>
+    {% endif %}
+</div>

@@ -1,20 +1,24 @@
 ---
 ---
 
+activityToActionMap = {
+    "like": "liked",
+};
+
 parseMention = (mention) ->
     {
-        url: mention.source,
-        name: mention.data.name || mention.source,
+        url: mention.data && mention.data.url,
+        source: (mention.data && mention.data.author && mention.data.author.name) || 'Someone',
         date: moment(mention.data.published || mention.verified_date).format 'MMM M, YYYY h:mma'
-        action: 'Mentioned',
+        action: (mention.activity && activityToActionMap[mention.activity.type]) || 'mentioned',
         content: null,
     }
 
 renderMention = (mention) ->
     parts = [];
     parts.push '<span class="post-mention-date">'+mention.date+'</span>' if mention.date
-    parts.push '<span class="post-mention-action">'+mention.action+'</span>' # required
-    parts.push 'by <a class="post-mention-source" href="'+mention.url+'">'+mention.name+'</a>' # required
+    parts.push '<span class="post-mention-source">'+mention.source+'</span>' # required
+    parts.push '<a class="post-mention-action" href="'+mention.url+'">'+mention.action+' this</a>.' # required
     parts.push '<span class="post-mention-content">'+mention.content+'</span>' if mention.content
     parts.join ' '
 

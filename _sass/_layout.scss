@@ -105,6 +105,12 @@
     .post-meta {
         float: right;
         margin-left: $spacing-unit;
+
+        @include media-query($on-mobile) {
+            display: block;
+            float: none;
+            margin-left: 0;
+        }
     }
 }
 
@@ -151,11 +157,20 @@
         margin: ($spacing-unit * 2) auto;
         width: 50%;
     }
+
+    li + li {
+        margin-top: $spacing-unit / 2;
+    }
 }
 
 .post-mention-date {
     color: $text-color-secondary;
     float: right;
+
+    @include media-query($on-mobile) {
+        display: block;
+        float: none;
+    }
 }
 
 .post-footnote {

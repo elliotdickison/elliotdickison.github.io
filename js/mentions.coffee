@@ -19,7 +19,8 @@ class Mention
         moment(@data.data.published || @data.verified_date).format 'MMM Do YYYY, h:mma'
 
     getSourceUrl: ->
-        (@data.data && @data.data.url) || @data.source || ''
+        source = @data.data.url if @data.source.match('brid-gy.appspot.com') && @data.data
+        source ||= @data.source
 
     getSourceName: ->
         sourceUrl = this.getSourceUrl()
@@ -39,23 +40,54 @@ class Mention
     getAuthorName: ->
         (@data.data && @data.data.author && @data.data.author.name) || 'Someone'
 
-    getContent: ->
-        @data.content || ''
+    getAuthorSiteUrl: ->
+        @data.data && @data.data.author && @data.data.author.url
 
-    getRenderString: ->
+    getAuthorPhotoUrl: ->
+        @data.data && @data.data.author && @data.data.author.photo
+
+    getContent: ->
+        (@data.data && @data.data.content) || ''
+
+    renderAction: ->
         sourceUrl = this.getSourceUrl()
+        markup = ''
+        markup += '<a class="post-mention-action" href="'+sourceUrl+'">' if sourceUrl
+        markup += this.getActionText()+' this'
+        markup += '</a>' if sourceUrl
+        markup += '.'
+
+    renderDate: ->
         formattedDate = this.getFormattedDate()
+        formattedDate && '<div class="post-mention-date">'+formattedDate+'</div>'
+
+    renderAuthorName: ->
+        '<span class="post-mention-author">'+this.getAuthorName()+'</span>'
+
+    renderAuthorPhoto: ->
+        photoUrl = this.getAuthorPhotoUrl();
+        siteUrl = this.getAuthorSiteUrl();
+        name = this.getAuthorName();
+        markup = ''
+        markup += '<'+(siteUrl && 'a href="'+siteUrl+'"' || 'span')+' class="post-mention-author-photo profile-photo profile-photo-small">'
+        markup += '<img class="profile-photo-img" src="'+photoUrl+'" alt="'+name+'" title="'+name+'" />'
+        markup += '</'+(siteUrl && 'a' || 'span')+'>'
+
+    renderContent: ->
         content = this.getContent()
-        actionMarkup = ''
-        actionMarkup += '<a class="post-mention-action" href="'+sourceUrl+'">' if sourceUrl
-        actionMarkup += this.getActionText()+' this'
-        actionMarkup += '</a>' if sourceUrl
-        actionMarkup += '.'
+        content && '<div class="post-mention-content">'+content+'</div>'
+
+    render: ->
         parts = [];
-        parts.push '<span class="post-mention-date">'+formattedDate+'</span>' if formattedDate
-        parts.push '<span class="post-mention-author">'+this.getAuthorName()+'</span>'
-        parts.push actionMarkup
-        parts.push '<span class="post-mention-content">'+content+'</span>' if content
+        parts.push this.renderAuthorPhoto();
+        parts.push '<div class="post-mention-text">'
+        parts.push this.renderDate()
+        parts.push this.renderAuthorName()
+        parts.push this.renderAction()
+        parts.push this.renderContent()
+        parts.push '</div>'
+        parts = parts.filter (val) ->
+            !!val
         parts.join ' '
 
 class MentionHandler
@@ -70,7 +102,7 @@ class MentionHandler
         if mentions.length
             html += '<ul>'
             for mention in mentions
-                html += '<li>'+mention.getRenderString()+'</li>'
+                html += '<li>'+mention.render()+'</li>'
             html += '</ul>'
         $(@container).html(html);
 

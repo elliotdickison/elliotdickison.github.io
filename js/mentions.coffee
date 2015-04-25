@@ -17,7 +17,7 @@ class Mention
     constructor: (@data) ->
 
     getFormattedDate: ->
-        moment(@data.data.published || @data.verified_date).format 'MMM Do YYYY, h:mma'
+        moment(@data.data.published || @data.verified_date).fromNow()
 
     getSourceUrl: ->
         source = @data.data.url if @data.source.match('brid-gy.appspot.com') && @data.data

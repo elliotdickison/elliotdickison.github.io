@@ -128,7 +128,7 @@ a.profile-photo:active {
 }
 
 .post-list-item + .post-list-item {
-    margin-top: $spacing-unit;
+    margin-top: $spacing-unit * 1.5;
 }
 
 .post-meta {

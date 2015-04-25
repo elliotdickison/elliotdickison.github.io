@@ -2,6 +2,7 @@
 title: "Get The First Array Key In PHP"
 date: 2014-01-12 15:24:32
 tags: code
+summary: "A somewhat useful PHP hack"
 ---
 Did you know there's an easy way to get the first (or last) key of an associative array in PHP *in one line*? Yep, it's true. You can throw all those monolithic two-line solutions out the window, grab your [PHP hammer](http://www.flickr.com/photos/raindrift/sets/72157629492908038), and get re-factoring. Here's the code:
 

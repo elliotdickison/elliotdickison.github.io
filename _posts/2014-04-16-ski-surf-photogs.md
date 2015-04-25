@@ -2,6 +2,7 @@
 title: "Ski + Surf Photographers"
 date: 2014-04-16 09:12:44
 tags: code
+summary: "Some favorite photogs"
 ---
 Here's a list of my favorite action sports photographers. They focus mainly on skiing and surfing. Take a look at their full portfolios, it's well worth the time. Chris Burkard runs an exceptionally good Instagram account as well; he's basically a one-man Nat Geo.
 

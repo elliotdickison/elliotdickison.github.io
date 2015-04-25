@@ -10,6 +10,9 @@ title: Blog
                 <span class="post-meta"><span class="dt-published" datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</span></span>
                 <a class="post-link p-name u-url" href="{{ post.url }}">{{ post.title }}</a>
             </h2>
+            {% if post.summary %}
+            <p class="post-summary">{{ post.summary }}</p>
+            {% endif %}
         </li>
     {% endfor %}
     </ul>

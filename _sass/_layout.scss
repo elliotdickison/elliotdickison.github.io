@@ -154,6 +154,11 @@ a.profile-photo:active {
     line-height: 1.4em;
 }
 
+.post-summary {
+    font-style: italic;
+    margin-top: 0;
+}
+
 .post-footnote {
     color: $text-color-secondary;
     display: block;

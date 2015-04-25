@@ -59,8 +59,8 @@ a.profile-photo:active {
 
 .site-footer {
     font-size: $font-size-small;
-    overflow: hidden;
     margin: ($spacing-unit * 2) 0 $spacing-unit;
+    overflow: hidden;
 
     .wrapper:before {
         border-top: 2px solid $background-color-dark;
@@ -100,11 +100,8 @@ a.profile-photo:active {
  */
 
 .page-content {
+    margin-top: $spacing-unit * 1.5;
     padding: 0;
-}
-
-.page-heading {
-    font-size: 20px;
 }
 
 /**
@@ -155,6 +152,7 @@ a.profile-photo:active {
 }
 
 .post-summary {
+    font-size: $font-size-small;
     font-style: italic;
     margin-top: 0;
 }

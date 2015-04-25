@@ -7,6 +7,7 @@ class Mention
         "default": {
             "like": "liked",
             "mention": "mentioned",
+            "reply": "replied to"
         },
         "twitter": {
             "like": "favorited",

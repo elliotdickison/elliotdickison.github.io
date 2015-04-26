@@ -2,7 +2,7 @@
 title: "The Storm"
 date: 2014-04-17 13:10:09
 tags: skiing
-summary: "Salomon Freeski TV video"
+summary: "A cool Salomon Freeski TV episode"
 ---
 I love this video from last year's season of Salomon Freeski TV. Slightly corny narration, but great skiing and production.
 

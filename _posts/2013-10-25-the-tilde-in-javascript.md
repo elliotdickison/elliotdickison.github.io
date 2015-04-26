@@ -1,6 +1,5 @@
 ---
 title: "The Tilde In JavaScript"
-date: 2013-10-25 16:38:54
 tags: code
 summary: "Everything you need to know about the squiggle operator"
 ---

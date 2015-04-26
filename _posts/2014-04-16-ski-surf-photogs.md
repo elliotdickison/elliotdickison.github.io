@@ -1,6 +1,5 @@
 ---
 title: "Ski + Surf Photographers"
-date: 2014-04-16 09:12:44
 tags: code
 summary: "Some favorite photogs"
 ---

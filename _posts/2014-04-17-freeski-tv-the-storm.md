@@ -1,6 +1,5 @@
 ---
 title: "The Storm"
-date: 2014-04-17 13:10:09
 tags: skiing
 summary: "A cool Salomon Freeski TV episode"
 ---

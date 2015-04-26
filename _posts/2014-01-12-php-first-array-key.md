@@ -1,6 +1,5 @@
 ---
 title: "Get The First Array Key In PHP"
-date: 2014-01-12 15:24:32
 tags: code
 summary: "A somewhat useful PHP hack"
 ---

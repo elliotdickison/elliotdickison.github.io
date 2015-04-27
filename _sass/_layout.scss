@@ -143,6 +143,12 @@ a.profile-photo:active {
     color: inherit;
 }
 
+.post-link-external-label {
+    color: $text-color-secondary;
+    font-size: $font-size-small;
+    font-weight: $font-weight;
+}
+
 .post-header {
     text-align: center;
 }

@@ -9,7 +9,7 @@ title: Blog
             <h2 class="post-title">
                 <span class="post-meta"><span class="dt-published" datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</span></span>
                 <a class="post-link p-name u-url" href="{% if post.external_link %}{{ post.external_link }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}</a>
-                {% if post.external_link %}<span class="post-link-external-label">(external link)</span>{% endif %}
+                {% if post.external_link %}<span class="post-link-external-label">(link)</span>{% endif %}
             </h2>
             {% if post.summary %}
             <p class="post-summary">{{ post.summary }}</p>

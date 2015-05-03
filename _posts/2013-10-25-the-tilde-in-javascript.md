@@ -35,12 +35,12 @@ if (str.indexOf("Bob")) { // -1... TRUE
 }
 
 // GOOD: This code won't log anything
-if (str.indexOf("Bob") != -1) { // FALSE
+if (str.indexOf("Bob") !== -1) { // FALSE
   console.log('Bob is in str');
 }
 {% endhighlight %}
 
-When I first learned about this I simply accepted all of those "!= -1" checks as a necessary evil. Okay, they're really not all that bad. Still, the tilde can help out here a bit. If you remember our formula from earlier, ~-1 is 0 (which is falsey). Conversely ~&lt;anything else&gt; is non-zero (which is truthy). Armed with this knowledge we can refactor those "!= -1" checks like so:
+When I first learned about this I simply accepted all of those "!== -1" checks as a necessary evil. Okay, they're really not all that bad. Still, the tilde can help out here a bit. If you remember our formula from earlier, ~-1 is 0 (which is falsey). Conversely ~&lt;anything else&gt; is non-zero (which is truthy). Armed with this knowledge we can refactor those "!== -1" checks like so:
 
 {% highlight javascript %}
 var str = "James Blaylock";

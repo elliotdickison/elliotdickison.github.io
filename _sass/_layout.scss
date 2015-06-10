@@ -6,7 +6,16 @@
     margin-left: auto;
     margin-right: auto;
     max-width: $content-width;
+    overflow: hidden;
     padding: 0 ($spacing-unit / 2);
+
+    &--separator:before {
+        border-top: 2px solid $background-color-dark;
+        content: '';
+        display: block;
+        margin: ($spacing-unit * 2) auto;
+        width: 50%;
+    }
 }
 
 /**
@@ -51,6 +60,10 @@ a.profile-photo:active {
     .profile-photo {
         display: inline-block;
     }
+
+    &--left {
+        text-align: left;
+    }
 }
 
 /**
@@ -59,16 +72,7 @@ a.profile-photo:active {
 
 .site-footer {
     font-size: $font-size-small;
-    margin: ($spacing-unit * 2) 0 $spacing-unit;
-    overflow: hidden;
-
-    .wrapper:before {
-        border-top: 2px solid $background-color-dark;
-        content: '';
-        display: block;
-        margin: 0 auto ($spacing-unit * 2) auto;
-        width: 50%;
-    }
+    padding-bottom: $spacing-unit * 2;
 }
 
 .bio {

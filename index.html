@@ -7,7 +7,9 @@ title: Blog
     {% for post in site.posts %}
         <li class="post-list-item h-entry">
             <h2 class="post-title">
-                <span class="post-meta"><span class="dt-published" datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</span></span>
+                <span class="post-meta">
+                    <span class="dt-published" datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</span>
+                </span>
                 <a class="post-link p-name u-url" href="{% if post.external_link %}{{ post.external_link }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}</a>
                 {% if post.external_link %}<span class="post-link-external-label">(link)</span>{% endif %}
             </h2>

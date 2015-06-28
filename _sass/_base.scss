@@ -135,11 +135,21 @@ h1, h2, h3, h4, h5, h6 {
  */
 
 blockquote {
-    border-left: 4px solid $theme-color;
     color: $text-color-secondary;
-    font-size: 1.2em;
     font-style: italic;
-    padding-left: $spacing-unit / 2;
+    margin-left: $spacing-unit * 2;
+    margin-right: $spacing-unit * 2;
+
+    cite {
+        color: $text-color;
+        display: block;
+        margin-top: $spacing-unit;
+        text-align: right;
+
+        &:before {
+            content: '– ';
+        }
+    }
 }
 
 /**

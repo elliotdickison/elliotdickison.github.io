@@ -22,6 +22,7 @@ defaults:
       layout: "post"
       author: "Elliot Dickison"
 
+# Estimated read time for posts
 estimate_read_time: true
 words_per_minute: 180
 
@@ -29,7 +30,7 @@ words_per_minute: 180
 markdown: kramdown
 sass:
     style: :compressed
-
+future: false
 highlighter: pygments
 
 # Blog posts get first-class urls

@@ -2,7 +2,7 @@
 ---
 
 class Mention
-    
+
     ACTION_TEXT_MAP: {
         "default": {
             "like": "liked",
@@ -54,9 +54,9 @@ class Mention
         sourceUrl = this.getSourceUrl()
         markup = ''
         markup += '<a class="post-mention-action" href="'+sourceUrl+'">' if sourceUrl
-        markup += this.getActionText()+' this'
+        markup += this.getActionText()
         markup += '</a>' if sourceUrl
-        markup += '.'
+        markup += ' this'
 
     renderDate: ->
         formattedDate = this.getFormattedDate()
@@ -79,13 +79,14 @@ class Mention
         content && '<div class="post-mention-content">'+content+'</div>'
 
     render: ->
+        renderedContent = this.renderContent();
         parts = [];
         parts.push this.renderAuthorPhoto();
         parts.push '<div class="post-mention-text">'
-        parts.push this.renderDate()
         parts.push this.renderAuthorName()
-        parts.push this.renderAction()
-        parts.push this.renderContent()
+        parts.push this.renderAction() + (if renderedContent.length then ':' else '.')
+        parts.push renderedContent
+        parts.push this.renderDate()
         parts.push '</div>'
         parts = parts.filter (val) ->
             !!val

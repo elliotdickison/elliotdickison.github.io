@@ -28,6 +28,10 @@
     height: $gravatar-size;
     padding: 2px;
     width: $gravatar-size;
+
+    img {
+        height: 100%;
+    }
 }
 
 .profile-photo-small {
@@ -91,7 +95,7 @@ a.profile-photo:active {
     margin: 0;
     max-width: 50%;
     text-transform: lowercase;
-    
+
     @include media-query($on-mobile) {
         float: none;
         margin-top: $spacing-unit;
@@ -205,10 +209,6 @@ a.profile-photo:active {
 }
 
 .post-mention-date {
-    color: $text-color-secondary;
-}
-
-.post-mention-content {
     color: $text-color-secondary;
 }
 

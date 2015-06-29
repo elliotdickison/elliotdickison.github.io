@@ -15,9 +15,13 @@ class Mention
     }
 
     constructor: (@data) ->
+        @moment = moment @data.data.published || @data.verified_date
 
-    getFormattedDate: ->
-        moment(@data.data.published || @data.verified_date).fromNow()
+    getDate: ->
+        @moment.format 'MMM Do YYYY h:mma'
+
+    getRelativeDate: ->
+        @moment.fromNow()
 
     getSourceUrl: ->
         source = @data.data.url if @data.source.match('brid-gy.appspot.com') && @data.data
@@ -59,8 +63,9 @@ class Mention
         markup += ' this'
 
     renderDate: ->
-        formattedDate = this.getFormattedDate()
-        formattedDate && '<div class="post-mention-date">'+formattedDate+'</div>'
+        date = this.getDate()
+        relativeDate = this.getRelativeDate()
+        '<div class="post-mention-date" title="'+date+'">'+relativeDate+'</div>'
 
     renderAuthorName: ->
         '<span class="post-mention-author">'+this.getAuthorName()+'</span>'
@@ -102,6 +107,7 @@ class MentionHandler
     renderMentions: (mentions) ->
         html = ''
         if mentions.length
+            this.sortMentions mentions
             html += '<ul>'
             for mention in mentions
                 html += '<li>'+mention.render()+'</li>'
@@ -112,7 +118,7 @@ class MentionHandler
         target = @target.replace /^(https?:)?[\/]+|[\/]+$/g, ''
         # List of all acceptable forms that the target may take. Ideally this would
         # be handled by the api, but this ensures that we don't miss mentions that
-        # use a trailing slash or different protocol for the target.
+        # use a trailing slash or a different protocol for the target.
         acceptableTargets = [
             target,
             target+'/',
@@ -120,8 +126,8 @@ class MentionHandler
             '//'+target+'/',
             'http://'+target,
             'http://'+target+'/',
-            # 'https://'+target,
-            # 'https://'+target+'/',
+            'https://'+target,
+            'https://'+target+'/',
         ]
         $.getJSON 'https://webmention.io/api/mentions?jsonp=?', {
             target: acceptableTargets,
@@ -130,6 +136,12 @@ class MentionHandler
             mentions = mentions.map (mention) ->
                 new Mention mention
             callback mentions
+
+    sortMentions: (mentions) ->
+        mentions.sort (a, b) ->
+            a = a.moment.valueOf()
+            b = b.moment.valueOf()
+            if a > b then 1 else if a < b then -1 else 0
 
 # Surface this for external use
 window.MentionHandler = MentionHandler

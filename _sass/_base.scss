@@ -100,8 +100,15 @@ a {
 
 a:hover,
 a:active {
-    /* Underline 3px up from the bottom of the em box */
-    box-shadow: inset 0 -3px 0 0 $background-color, inset 0 calc(-4px) 0 0 $theme-color;
+
+    @include link-underline(0);
+
+    h1, h2, h3, h4, h5, h6 {
+        a:hover,
+        a:active {
+            @include link-underline(-1px);
+        }
+    }
 
     /* Clear descenders */
     text-shadow:
@@ -117,15 +124,20 @@ a:active {
         $background-color 0 -1px, $background-color 0 1px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.wf-active {
     a:hover,
     a:active {
-        /* Underline 6px up from the bottom of the em box */
-        box-shadow: inset 0 -6px 0 0 $background-color, inset 0 -7px 0 0 $theme-color;
+        @include link-underline(-3px);
+    }
 
-        /* Underline 4px up from the bottom of the em box on mobile */
-        @include media-query($on-mobile) {
-            box-shadow: inset 0 -5px 0 0 $background-color, inset 0 -6px 0 0 $theme-color;
+    h1, h2, h3, h4, h5, h6 {
+        a:hover,
+        a:active {
+            @include link-underline(-6px);
+
+            @include media-query($on-mobile) {
+                @include link-underline(-5px);
+            }
         }
     }
 }

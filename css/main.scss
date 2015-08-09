@@ -28,7 +28,7 @@ $spacing-unit: 1.3rem;
 
 /* media query helper */
 $on-mobile:	$content-width;
-@mixin media-query($on-device-type) {
+@mixin media-query ($on-device-type) {
     @media screen and (max-width: $on-device-type) {
         @content;
     }
@@ -36,14 +36,19 @@ $on-mobile:	$content-width;
 
 /* prefixer */
 $prefixes: webkit moz ms o;
-@mixin prefix($property, $value){
+@mixin prefix ($property, $value) {
     @each $prefix in $prefixes {
         -#{$prefix}-#{$property}: #{$value};
     }
     #{$property}: #{$value};
 }
 
-// Import partials from `sass_dir` (defaults to `_sass`)
+/* underline links with an inset box shadow so that the line can be placed relative to the em box */
+@mixin link-underline ($em-box-offset) {
+    box-shadow: inset 0 $em-box-offset 0 0 $background-color, inset 0 ($em-box-offset - 1px) 0 0 $theme-color;
+}
+
+/* Import partials from `sass_dir` (defaults to `_sass`) */
 @import
     "base",
     "layout",

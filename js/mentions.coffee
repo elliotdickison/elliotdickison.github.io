@@ -75,9 +75,9 @@ class Mention
         siteUrl = this.getAuthorSiteUrl();
         name = this.getAuthorName();
         markup = ''
-        markup += '<'+(siteUrl && 'a href="'+siteUrl+'"' || 'span')+' class="post-mention-author-photo profile-photo profile-photo-small">'
-        markup += '<img class="profile-photo-img" src="'+photoUrl+'" alt="'+name+'" title="'+name+'" />'
-        markup += '</'+(siteUrl && 'a' || 'span')+'>'
+        markup += '<'+(if siteUrl then 'a href="'+siteUrl+'"' else 'span')+' class="post-mention-author-photo profile-photo profile-photo--small'+(if siteUrl then ' profile-photo--link' else '')+'">'
+        markup += '<img class="profile-photo__img" src="'+photoUrl+'" alt="'+name+'" title="'+name+'" />'
+        markup += '</'+(if siteUrl then 'a' else 'span')+'>'
 
     renderContent: ->
         content = this.getContent()

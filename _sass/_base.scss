@@ -52,17 +52,23 @@ h2 + figure {
  */
 
 img {
+    display: block;
     max-width: 100%;
     vertical-align: middle;
 }
 
-figure > img {
-    display: block;
-}
+figure {
+    margin-left: $spacing-unit * -2;
+    margin-right: $spacing-unit * -2;
 
-figcaption {
-    margin-top: $spacing-unit / 4;
-    text-align: right;
+    img {
+        width: 100%;
+    }
+
+    figcaption {
+        margin: ($spacing-unit / 4) ($spacing-unit * 2) 0;
+        text-align: right;
+    }
 }
 
 /**
@@ -94,49 +100,36 @@ h2 {
  */
 
 a {
-    color: $theme-color;
     text-decoration: none;
+    color: $theme-color;
 }
 
 a:hover,
 a:active {
+    @include text-underline(0, $background-color);
+    @include text-clear-descendors($background-color);
+}
 
-    @include link-underline(0);
-
-    h1, h2, h3, h4, h5, h6 {
-        a:hover,
-        a:active {
-            @include link-underline(-1px);
-        }
+h1, h2, h3, h4, h5, h6 {
+    a:hover,
+    a:active {
+        @include text-underline(-1px, $background-color);
     }
-
-    /* Clear descenders */
-    text-shadow:
-        $background-color 3px -1px, $background-color -3px -1px,
-        $background-color 2px -1px, $background-color -2px -1px,
-        $background-color 1px -1px, $background-color -1px -1px,
-        $background-color 3px 0, $background-color -3px 0,
-        $background-color 2px 0, $background-color -2px 0,
-        $background-color 1px 0, $background-color -1px 0,
-        $background-color 3px 1px, $background-color -3px 1px,
-        $background-color 2px 1px, $background-color -2px 1px,
-        $background-color 1px 1px, $background-color -1px 1px,
-        $background-color 0 -1px, $background-color 0 1px;
 }
 
 .wf-active {
     a:hover,
     a:active {
-        @include link-underline(-3px);
+        @include text-underline(-3px, $background-color);
     }
 
     h1, h2, h3, h4, h5, h6 {
         a:hover,
         a:active {
-            @include link-underline(-6px);
+            @include text-underline(-6px, $background-color);
 
             @include media-query($on-mobile) {
-                @include link-underline(-5px);
+                @include text-underline(-5px, $background-color);
             }
         }
     }
@@ -170,7 +163,6 @@ blockquote {
 
 pre,
 code {
-    border-radius: 3px;
     font-family: $font-family-code;
     font-size: $font-size-code;
     vertical-align: middle;
@@ -178,14 +170,18 @@ code {
 
 p code {
     background-color: $background-color-dark;
+    border-radius: 3px;
     padding: 3px 5px;
 }
 
 pre {
     background-color: $background-color-code;
     color: #fff;
+    margin-left: $spacing-unit * -2;
+    margin-right: $spacing-unit * -2;
     overflow-x: auto;
-    padding: 8px 12px;
+    padding: $spacing-unit ($spacing-unit * 2);
+
 
     > code {
         padding-right: 0;

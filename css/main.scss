@@ -14,20 +14,21 @@ $line-height: 1.6;
 
 /* colors */
 $background-color-code: #49483e;
-$background-color-dark: #e4e4e4;
-$background-color: #fff;
+$background-color-dark: #e0e0e0;
+$background-color-card: #fff;
+$background-color: #eee;
 $theme-color: #da5b54;
 $text-color-secondary: #828282;
 $text-color: #49483e;
 
 /* dimensions */
-$content-width: 630px;
+$content-width: 750px;
 $gravatar-size: 78px;
 $gravatar-size-small: 60px;
 $spacing-unit: 1.3rem;
 
 /* media query helper */
-$on-mobile:	$content-width;
+$on-mobile:	600px;
 @mixin media-query ($on-device-type) {
     @media screen and (max-width: $on-device-type) {
         @content;
@@ -43,9 +44,27 @@ $prefixes: webkit moz ms o;
     #{$property}: #{$value};
 }
 
-/* underline links with an inset box shadow so that the line can be placed relative to the em box */
-@mixin link-underline ($em-box-offset) {
+/* underline text with an inset box shadow so that the line can be placed
+ relative to the em box */
+@mixin text-underline ($em-box-offset, $background-color) {
     box-shadow: inset 0 $em-box-offset 0 0 $background-color, inset 0 ($em-box-offset - 1px) 0 0 $theme-color;
+}
+
+/* clear text descenders by adding a text-shadow that's the same color as the
+ background... this is expensive and will only work on solid backgrounds, so use
+ sparingly */
+@mixin text-clear-descendors ($background-color) {
+    text-shadow:
+        $background-color 3px -1px, $background-color -3px -1px,
+        $background-color 2px -1px, $background-color -2px -1px,
+        $background-color 1px -1px, $background-color -1px -1px,
+        $background-color 3px 0, $background-color -3px 0,
+        $background-color 2px 0, $background-color -2px 0,
+        $background-color 1px 0, $background-color -1px 0,
+        $background-color 3px 1px, $background-color -3px 1px,
+        $background-color 2px 1px, $background-color -2px 1px,
+        $background-color 1px 1px, $background-color -1px 1px,
+        $background-color 0 -1px, $background-color 0 1px;
 }
 
 /* Import partials from `sass_dir` (defaults to `_sass`) */

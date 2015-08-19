@@ -5,7 +5,7 @@ title: Blog
 <div class="home">
     <ul class="post-list h-feed">
     {% for post in site.posts %}
-        <li class="post-list-item h-entry">
+        <li class="post post--stacked h-entry">
             <h2 class="post-title">
                 <span class="post-meta">
                     <span class="dt-published" datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</span>

@@ -6,7 +6,6 @@
     margin-left: auto;
     margin-right: auto;
     max-width: $content-width;
-    overflow: hidden;
     padding: 0 ($spacing-unit / 2);
 
     &--separator:before {
@@ -29,29 +28,26 @@
     padding: 2px;
     width: $gravatar-size;
 
-    img {
+    &__img {
+        border-radius: 100%;
         height: 100%;
         width: 100%;
     }
-}
 
-.profile-photo-small {
-    width: $gravatar-size-small;
-    height: $gravatar-size-small;
-}
+    &--small {
+        width: $gravatar-size-small;
+        height: $gravatar-size-small;
+    }
 
-.profile-photo .profile-photo-img {
-    border-radius: 100%;
-}
+    &--link {
+        border: 2px solid transparent;
 
-a.profile-photo {
-    border: 2px solid transparent;
-}
-
-a.profile-photo:hover,
-a.profile-photo:active {
-    box-shadow: none;
-    border-color: $theme-color;
+        &:hover,
+        &:active {
+            box-shadow: none;
+            border-color: $theme-color;
+        }
+    }
 }
 
 /**
@@ -77,6 +73,8 @@ a.profile-photo:active {
 
 .site-footer {
     font-size: $font-size-small;
+    margin-top: 0;
+    overflow: hidden; /* Clearfix floated content */
     padding-bottom: $spacing-unit * 2;
 }
 
@@ -117,6 +115,62 @@ a.profile-photo:active {
  * Posts
  */
 
+.post {
+    @include prefix(border-radius, 3px);
+    @include prefix(box-shadow, 0 0 12px rgba(0, 0, 0, 0.1));
+
+    background-color: $background-color-card;
+    padding: $spacing-unit * 2;
+
+    &--stacked {
+        padding-bottom: $spacing-unit;
+        padding-top: $spacing-unit;
+    }
+
+    &--stacked + &--stacked {
+        margin-top: $spacing-unit;
+    }
+
+    @include media-query($on-mobile) {
+        @include prefix(border-radius, 0);
+
+        margin-left: $spacing-unit / -2;
+        margin-right: $spacing-unit / -2;
+        padding: $spacing-unit ($spacing-unit / 2);
+    }
+
+    a:hover,
+    a:active {
+        @include text-underline(0, $background-color-card);
+        @include text-clear-descendors($background-color-card);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        a:hover,
+        a:active {
+            @include text-underline(-1px, $background-color-card);
+        }
+    }
+
+    .wf-active & {
+        a:hover,
+        a:active {
+            @include text-underline(-3px, $background-color-card);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            a:hover,
+            a:active {
+                @include text-underline(-6px, $background-color-card);
+
+                @include media-query($on-mobile) {
+                    @include text-underline(-5px, $background-color-card);
+                }
+            }
+        }
+    }
+}
+
 .post-list {
     list-style: none;
     margin-left: 0;
@@ -131,10 +185,6 @@ a.profile-photo:active {
             margin-left: 0;
         }
     }
-}
-
-.post-list-item + .post-list-item {
-    margin-top: $spacing-unit * 1.5;
 }
 
 .post-meta {
@@ -229,14 +279,16 @@ a.profile-photo:active {
 .embedded-video-container {
     background: #000;
     height: 0;
-    padding-bottom: 56.25%; /* 16:9 */
+    margin-left: $spacing-unit * -2;
+    margin-right: $spacing-unit * -2;
+    padding-bottom: calc(56.25% + #{$spacing-unit * 4 * 0.5625}); /* 16:9 */
     position: relative;
-}
 
-.embedded-video-container iframe {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+    iframe {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
 }

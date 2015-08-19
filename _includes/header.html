@@ -1,6 +1,6 @@
 <header class="site-header {% if include.align %}site-header--{{ include.align }}{% endif %}">
     <div class="wrapper">
-        <a class="profile-photo profile-photo--link" href="{{ site.baseurl }}/" rel="me" title="{{ site.title }}">
+        <a class="profile-photo profile-photo--link {% if page.small_header %}profile-photo--small{% endif %}" href="{{ site.baseurl }}/" rel="me" title="{{ site.title }}">
             <img class="profile-photo__img" src="http://www.gravatar.com/avatar/{{ site.gravatar_hash }}?s={{ site.gravatar_size }}" alt="{{ site.title }}" />
         </a>
         {% if include.heading %}<h1>{{ include.heading }}</h1>{% endif %}

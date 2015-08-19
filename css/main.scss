@@ -7,6 +7,7 @@
 $font-family-code: "Courier", monospace;
 $font-family: "skolar", "Georgia", serif;
 $font-size-code: 0.75rem;
+$font-size-extra-small: 16px;
 $font-size-small: 19px;
 $font-size: 22px;
 $font-weight: 400;
@@ -26,6 +27,8 @@ $content-width: 750px;
 $gravatar-size: 78px;
 $gravatar-size-small: 60px;
 $spacing-unit: 1.3rem;
+$large-spacing-unit: $spacing-unit * 2;
+$small-spacing-unit: $spacing-unit / 2;
 
 /* media query helper */
 $on-mobile:	600px;

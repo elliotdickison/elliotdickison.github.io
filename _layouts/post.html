@@ -1,16 +1,17 @@
 ---
 layout: default
+small_header: 1
 ---
 <div class="post h-entry">
-    <header class="post-header">
-        <h1 class="post-title p-name">{{ page.title }}</h1>
-        <p class="post-meta"><span class="dt-published" datetime="{{ page.date }}">{{ page.date | date: "%b %-d, %Y" }}</span>{% include post-read-time.html %}{% if page.author %}<span class="post-author"> • <span class="p-author h-card">{{ page.author }}</span></span>{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    <header class="post__header">
+        <h1 class="post__title p-name">{{ page.title }}</h1>
+        <p class="post__meta"><span class="dt-published" datetime="{{ page.date }}">{{ page.date | date: "%b %-d, %Y" }}</span>{% include post-read-time.html %}{% if page.author %}<span class="post__author"> • <span class="p-author h-card">{{ page.author }}</span></span>{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
     </header>
-    <article class="post-content e-content">
+    <article class="post__content e-content">
         {{ content }}
     </article>
 </div>
-<section class="post-mentions js-mentions"></section>
+<section class="mentions js-mentions"></section>
 <!-- TODO: concat these assets together and minify them -->
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>

@@ -44,7 +44,7 @@ pre * + * {
 }
 
 h2 + figure {
-    margin-top: $spacing-unit / 2;
+    margin-top: $small-spacing-unit;
 }
 
 /**
@@ -58,15 +58,15 @@ img {
 }
 
 figure {
-    margin-left: $spacing-unit * -2;
-    margin-right: $spacing-unit * -2;
+    margin-left: -$large-spacing-unit;
+    margin-right: -$large-spacing-unit;
 
     img {
         width: 100%;
     }
 
     figcaption {
-        margin: ($spacing-unit / 4) ($spacing-unit * 2) 0;
+        margin: $small-spacing-unit $large-spacing-unit 0;
         text-align: right;
     }
 }
@@ -76,7 +76,8 @@ figure {
  */
 
 ul, ol {
-    margin-left: $spacing-unit;
+    list-style: none;
+    margin: 0;
 }
 
 /**
@@ -110,28 +111,10 @@ a:active {
     @include text-clear-descendors($background-color);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    a:hover,
-    a:active {
-        @include text-underline(-1px, $background-color);
-    }
-}
-
 .wf-active {
     a:hover,
     a:active {
         @include text-underline(-3px, $background-color);
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        a:hover,
-        a:active {
-            @include text-underline(-6px, $background-color);
-
-            @include media-query($on-mobile) {
-                @include text-underline(-5px, $background-color);
-            }
-        }
     }
 }
 
@@ -142,8 +125,8 @@ h1, h2, h3, h4, h5, h6 {
 blockquote {
     color: $text-color-secondary;
     font-style: italic;
-    margin-left: $spacing-unit * 2;
-    margin-right: $spacing-unit * 2;
+    margin-left: $large-spacing-unit;
+    margin-right: $large-spacing-unit;
 
     cite {
         color: $text-color;
@@ -177,10 +160,10 @@ p code {
 pre {
     background-color: $background-color-code;
     color: #fff;
-    margin-left: $spacing-unit * -2;
-    margin-right: $spacing-unit * -2;
+    margin-left: -$large-spacing-unit;
+    margin-right: -$large-spacing-unit;
     overflow-x: auto;
-    padding: $spacing-unit ($spacing-unit * 2);
+    padding: $spacing-unit $large-spacing-unit;
 
 
     > code {

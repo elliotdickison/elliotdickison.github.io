@@ -57,7 +57,7 @@ class Mention
     renderAction: ->
         sourceUrl = this.getSourceUrl()
         markup = ''
-        markup += '<a class="post-mention-action" href="'+sourceUrl+'">' if sourceUrl
+        markup += '<a class="mention__action" href="'+sourceUrl+'">' if sourceUrl
         markup += this.getActionText()
         markup += '</a>' if sourceUrl
         markup += ' this'
@@ -65,29 +65,29 @@ class Mention
     renderDate: ->
         date = this.getDate()
         relativeDate = this.getRelativeDate()
-        '<div class="post-mention-date" title="'+date+'">'+relativeDate+'</div>'
+        '<div class="mention__date" title="'+date+'">'+relativeDate+'</div>'
 
     renderAuthorName: ->
-        '<span class="post-mention-author">'+this.getAuthorName()+'</span>'
+        '<span class="mention__author">'+this.getAuthorName()+'</span>'
 
     renderAuthorPhoto: ->
         photoUrl = this.getAuthorPhotoUrl();
         siteUrl = this.getAuthorSiteUrl();
         name = this.getAuthorName();
         markup = ''
-        markup += '<'+(if siteUrl then 'a href="'+siteUrl+'"' else 'span')+' class="post-mention-author-photo profile-photo profile-photo--small'+(if siteUrl then ' profile-photo--link' else '')+'">'
+        markup += '<'+(if siteUrl then 'a href="'+siteUrl+'"' else 'span')+' class="mention__author-photo profile-photo profile-photo--small'+(if siteUrl then ' profile-photo--link' else '')+'">'
         markup += '<img class="profile-photo__img" src="'+photoUrl+'" alt="'+name+'" title="'+name+'" />'
         markup += '</'+(if siteUrl then 'a' else 'span')+'>'
 
     renderContent: ->
         content = this.getContent()
-        content && '<div class="post-mention-content">'+content+'</div>'
+        content && '<div class="mention__content">'+content+'</div>'
 
     render: ->
         renderedContent = this.renderContent();
         parts = [];
         parts.push this.renderAuthorPhoto();
-        parts.push '<div class="post-mention-text">'
+        parts.push '<div class="mention__text">'
         parts.push this.renderAuthorName()
         parts.push this.renderAction() + (if renderedContent.length then ':' else '.')
         parts.push renderedContent

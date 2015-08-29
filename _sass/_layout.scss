@@ -131,6 +131,10 @@
             &:hover,
             &:active {
                 @include text-underline(-6px, $background-color);
+
+                @include media-query($on-mobile) {
+                    @include text-underline(-5px, $background-color);
+                }
             }
         }
     }

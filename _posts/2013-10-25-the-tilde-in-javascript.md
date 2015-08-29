@@ -8,7 +8,7 @@ Here's a little tidbit I learned recently: the tilde "~" is an operator in JS. W
 ## What does it do?
 
 In JS the tilde performs a bitwise-not. For any given bit 1 or 0, the tilde will transform it to the opposite bit 0 or 1. JS doesn't have a binary type though\*, so this definition isn't all that useful. When dealing with good ol' decimal numbers the effect of a bitwise-not can be expressed with the simple formula -1 &times; (N + 1). If you're curious why exactly this holds true, MDN has a great explanation [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Signed_32-bit_integers). In a nutshell it's because JS encodes negative integers using [two's complement](http://en.wikipedia.org/wiki/Two's_complement). But regardless of how it works, let's see the effect of the tilde in the wild.
-<span class="post-footnote">\* interesting nugget: JavaScript does have [hex & octal](http://www.javascripter.net/faq/octalsan.htm) types</span>
+<span class="post__footnote">\* interesting nugget: JavaScript does have [hex & octal](http://www.javascripter.net/faq/octalsan.htm) types</span>
 
 
 {% highlight javascript %}

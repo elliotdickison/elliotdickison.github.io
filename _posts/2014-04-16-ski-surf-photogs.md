@@ -1,5 +1,5 @@
 ---
-title: "Ski + Surf Photographers"
+title: "Ski & Surf Photographers"
 tags: code
 summary: "Some favorite photogs"
 ---

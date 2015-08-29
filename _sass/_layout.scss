@@ -6,13 +6,13 @@
     margin-left: auto;
     margin-right: auto;
     max-width: $content-width;
-    padding: 0 $small-spacing-unit;
+    padding: 0 $spacing-unit-small;
 
     &--separator:before {
-        border-top: 2px solid $background-color-dark;
+        border-top: 2px solid $background-color-alternate;
         content: '';
         display: block;
-        margin: $large-spacing-unit auto;
+        margin: $spacing-unit-large auto;
         width: 50%;
     }
 }
@@ -55,15 +55,15 @@
  */
 
 .site-header {
-    margin: $spacing-unit 0;
+    margin: $spacing-unit-large 0 $spacing-unit;
     text-align: center;
 
     .profile-photo {
         display: inline-block;
     }
 
-    &--left {
-        text-align: left;
+    &--small {
+        margin: $spacing-unit 0 $spacing-unit-small;
     }
 }
 
@@ -75,7 +75,7 @@
     font-size: $font-size-small;
     margin-top: 0;
     overflow: hidden; /* Clearfix floated content */
-    padding-bottom: $large-spacing-unit;
+    padding-bottom: $spacing-unit-large;
 }
 
 .bio {
@@ -91,14 +91,15 @@
 .contact-links {
     float: right;
     list-style: none;
-    margin: 0;
-    max-width: 50%;
+    margin: 0 0 0 1rem;
+    text-align: right;
     text-transform: lowercase;
+    white-space: nowrap;
 
     @include media-query($on-mobile) {
         float: none;
-        margin-top: $spacing-unit;
-        max-width: none;
+        margin: $spacing-unit 0 0;
+        text-align: left;
     }
 }
 
@@ -116,50 +117,26 @@
  */
 
 .post {
-    @include prefix(border-radius, 3px);
-    @include prefix(box-shadow, 0 0 12px rgba(0, 0, 0, 0.1));
 
-    background-color: $background-color-card;
-    padding: $large-spacing-unit;
-
-    a:hover,
-    a:active {
-        @include text-underline(0, $background-color-card);
-        @include text-clear-descendors($background-color-card);
-    }
-
-    &__title {
-        a:hover,
-        a:active {
-            @include text-underline(-1px, $background-color-card);
-        }
-    }
-
-    .wf-active & {
-        a:hover,
-        a:active {
-            @include text-underline(-3px, $background-color-card);
+    &__title a {
+        color: inherit;
+        
+        &:hover,
+        &:active {
+            @include text-underline(-1px, $background-color);
+            @include text-clear-descendors($background-color);
         }
 
-        &__title {
-            a:hover,
-            a:active {
-                @include text-underline(-6px, $background-color-card);
-
-                @include media-query($on-mobile) {
-                    @include text-underline(-5px, $background-color-card);
-                }
+        .wf-active & {
+            &:hover,
+            &:active {
+                @include text-underline(-6px, $background-color);
             }
         }
     }
 
-    &--stacked {
-        padding-bottom: $spacing-unit;
-        padding-top: $spacing-unit;
-
-        & + & {
-            margin-top: $spacing-unit;
-        }
+    &--stacked + &--stacked {
+        margin-top: $spacing-unit * 1.5;
     }
 
     &--stacked &__meta {
@@ -212,20 +189,10 @@
         color: $text-color-secondary;
         display: block;
         font-size: $font-size-small;
-        margin-top: $small-spacing-unit;
+        margin-top: $spacing-unit-small;
     }
 
     @include media-query($on-mobile) {
-        @include prefix(border-radius, 0);
-
-        margin-left: -$small-spacing-unit;
-        margin-right: -$small-spacing-unit;
-        padding: $spacing-unit $small-spacing-unit;
-
-        &--stacked {
-            padding: $small-spacing-unit;
-        }
-
         &--stacked &__meta {
             font-size: $font-size-extra-small;
             line-height: $font-size;
@@ -239,29 +206,30 @@
 
 .mentions {
     margin-top: 0;
-}
 
-.mentions ul {
-    font-size: $font-size-small;
+    &__list {
+        font-size: $font-size-small;
 
-    &:before {
-        border-top: 2px solid $background-color-dark;
-        content: '';
-        display: block;
-        margin: $large-spacing-unit auto;
-        width: 50%;
-    }
+        &:before {
+            border-top: 2px solid $background-color-alternate;
+            content: '';
+            display: block;
+            margin: $spacing-unit-large auto;
+            width: 50%;
+        }
 
-    * {
-        margin-top: 0;
-    }
+        * {
+            margin-top: 0;
+        }
 
-    li + li {
-        margin-top: $large-spacing-unit;
+        &__item + &__item {
+            margin-top: $spacing-unit-large;
+        }
     }
 }
 
 .mention {
+
     &__date {
         color: $text-color-secondary;
     }
@@ -272,7 +240,7 @@
 
     &__text {
         margin-left: $gravatar-size-small;
-        padding-left: $small-spacing-unit;
+        padding-left: $spacing-unit-small;
     }
 }
 
@@ -283,9 +251,7 @@
 .embedded-video-container {
     background: #000;
     height: 0;
-    margin-left: -$large-spacing-unit;
-    margin-right: -$large-spacing-unit;
-    padding-bottom: calc(56.25% + #{$large-spacing-unit * 2 * 0.5625}); /* 16:9 */
+    padding-bottom: 56.25%; /* 16:9 */
     position: relative;
 
     iframe {

@@ -14,24 +14,23 @@ $font-weight: 400;
 $line-height: 1.6;
 
 /* colors */
+$background-color-alternate: #dadad8;
 $background-color-code: #49483e;
-$background-color-dark: #e0e0e0;
-$background-color-card: #fff;
-$background-color: #eee;
+$background-color: #f3f3f2;
 $theme-color: #da5b54;
-$text-color-secondary: #828282;
-$text-color: #49483e;
+$text-color-secondary: #7f7e77;
+$text-color: #33322b;
 
 /* dimensions */
-$content-width: 750px;
+$content-width: 630px;
 $gravatar-size: 78px;
 $gravatar-size-small: 60px;
 $spacing-unit: 1.3rem;
-$large-spacing-unit: $spacing-unit * 2;
-$small-spacing-unit: $spacing-unit / 2;
+$spacing-unit-large: $spacing-unit * 2;
+$spacing-unit-small: $spacing-unit / 2;
 
 /* media query helper */
-$on-mobile:	600px;
+$on-mobile:	500px;
 @mixin media-query ($on-device-type) {
     @media screen and (max-width: $on-device-type) {
         @content;
@@ -68,6 +67,16 @@ $prefixes: webkit moz ms o;
         $background-color 2px 1px, $background-color -2px 1px,
         $background-color 1px 1px, $background-color -1px 1px,
         $background-color 0 -1px, $background-color 0 1px;
+}
+
+%reset-link {
+    color: inherit;
+
+    &:hover,
+    &:active {
+        box-shadow: none;
+        text-shadow: none;
+    }
 }
 
 /* Import partials from `sass_dir` (defaults to `_sass`) */

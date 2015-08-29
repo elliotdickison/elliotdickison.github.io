@@ -2,21 +2,19 @@
 layout: default
 title: Blog
 ---
-<div class="home">
-    <ul class="h-feed">
-    {% for post in site.posts %}
-        <li class="post post--stacked h-entry">
-            <h2 class="post__title">
-                <span class="post__meta">
-                    <span class="dt-published" datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</span>
-                </span>
-                <a class="post__link p-name u-url" href="{% if post.external_link %}{{ post.external_link }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}</a>
-                {% if post.external_link %}<span class="post__link__external-label">(link)</span>{% endif %}
-            </h2>
-            {% if post.summary %}
-            <p class="post__summary">{{ post.summary }}</p>
-            {% endif %}
-        </li>
-    {% endfor %}
-    </ul>
+<div class="h-feed">
+{% for post in site.posts %}
+    <div class="post post--stacked h-entry">
+        <h2 class="post__title">
+            <span class="post__meta">
+                <span class="dt-published" datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</span>
+            </span>
+            <a class="post__title__text p-name u-url" href="{% if post.external_link %}{{ post.external_link }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}</a>
+            {% if post.external_link %}<span class="post__link__external-label">(link)</span>{% endif %}
+        </h2>
+        {% if post.summary %}
+        <p class="post__summary">{{ post.summary }}</p>
+        {% endif %}
+    </div>
+{% endfor %}
 </div>

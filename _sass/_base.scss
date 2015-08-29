@@ -15,6 +15,8 @@
 html {
     @include prefix(font-feature-settings, "'liga' 1, 'kern'");
     @include prefix(text-size-adjust, none);
+    background-color: $background-color;
+    color: $text-color;
     font-family: $font-family;
     font-size: $font-size;
     font-weight: $font-weight;
@@ -25,8 +27,6 @@ html {
 }
 
 body {
-    background-color: $background-color;
-    color: $text-color;
     overflow-y: scroll;
 }
 
@@ -44,7 +44,7 @@ pre * + * {
 }
 
 h2 + figure {
-    margin-top: $small-spacing-unit;
+    margin-top: $spacing-unit-small;
 }
 
 /**
@@ -58,15 +58,14 @@ img {
 }
 
 figure {
-    margin-left: -$large-spacing-unit;
-    margin-right: -$large-spacing-unit;
 
     img {
+        border-radius: 3px;
         width: 100%;
     }
 
     figcaption {
-        margin: $small-spacing-unit $large-spacing-unit 0;
+        margin-top: $spacing-unit-small;
         text-align: right;
     }
 }
@@ -101,20 +100,20 @@ h2 {
  */
 
 a {
-    text-decoration: none;
     color: $theme-color;
-}
+    text-decoration: none;
 
-a:hover,
-a:active {
-    @include text-underline(0, $background-color);
-    @include text-clear-descendors($background-color);
-}
+    &:hover,
+    &:active {
+        @include text-underline(0, $background-color);
+        @include text-clear-descendors($background-color);
+    }
 
-.wf-active {
-    a:hover,
-    a:active {
-        @include text-underline(-3px, $background-color);
+    .wf-active & {
+        &:hover,
+        &:active {
+            @include text-underline(-3px, $background-color);
+        }
     }
 }
 
@@ -125,8 +124,8 @@ a:active {
 blockquote {
     color: $text-color-secondary;
     font-style: italic;
-    margin-left: $large-spacing-unit;
-    margin-right: $large-spacing-unit;
+    margin-left: $spacing-unit-large;
+    margin-right: $spacing-unit-large;
 
     cite {
         color: $text-color;
@@ -152,18 +151,17 @@ code {
 }
 
 p code {
-    background-color: $background-color-dark;
+    background-color: $background-color-alternate;
     border-radius: 3px;
     padding: 3px 5px;
 }
 
 pre {
     background-color: $background-color-code;
+    border-radius: 3px;
     color: #fff;
-    margin-left: -$large-spacing-unit;
-    margin-right: -$large-spacing-unit;
     overflow-x: auto;
-    padding: $spacing-unit $large-spacing-unit;
+    padding: 8px 12px;
 
 
     > code {

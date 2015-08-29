@@ -108,9 +108,9 @@ class MentionHandler
         html = ''
         if mentions.length
             this.sortMentions mentions
-            html += '<ul>'
+            html += '<ul class="mentions__list">'
             for mention in mentions
-                html += '<li>'+mention.render()+'</li>'
+                html += '<li class="mentions__list__item">'+mention.render()+'</li>'
             html += '</ul>'
         $(@container).html(html);
 

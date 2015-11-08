@@ -120,20 +120,20 @@
 
     &__title a {
         color: inherit;
-        
+
         &:hover,
         &:active {
-            @include text-underline(-1px, $background-color);
+            @include text-underline(-2px, $background-color);
             @include text-clear-descendors($background-color);
         }
 
         .wf-active & {
             &:hover,
             &:active {
-                @include text-underline(-6px, $background-color);
+                @include text-underline(-8px, $background-color);
 
                 @include media-query($on-mobile) {
-                    @include text-underline(-5px, $background-color);
+                    @include text-underline(-7px, $background-color);
                 }
             }
         }
@@ -180,7 +180,7 @@
     }
 
     &__title {
-        line-height: 1.4em;
+        line-height: 1.2em;
     }
 
     &__summary {
@@ -198,7 +198,7 @@
 
     @include media-query($on-mobile) {
         &--stacked &__meta {
-            font-size: $font-size-extra-small;
+            font-size: $font-size-small;
             line-height: $font-size;
         }
     }

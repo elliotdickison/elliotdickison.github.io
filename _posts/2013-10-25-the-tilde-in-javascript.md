@@ -1,7 +1,8 @@
 ---
-title: "The Tilde In JavaScript"
+title: The Tilde In JavaScript
 tags: code
-summary: "Everything you need to know about the squiggle operator"
+summary: Everything you need to know about the squiggle operator
+published: true
 ---
 Here's a little tidbit I learned recently: the tilde "~" is an operator in JS. Who knew? It turns out a lot of people, actually, but since I didn't find out until way late in the game I thought I would help spread the word.
 
@@ -24,35 +25,35 @@ console.log(~-2); // 1
 
 At first glance this might seem pretty useless. Well, to a certain extent it is... most JS developers get along just fine without the tilde. [Joe Zim](http://www.joezimjs.com/javascript/great-mystery-of-the-tilde/) has documented a pretty nifty application for it though.
 
-JS functions that normally return tuple indices often use -1 to indicate an error, since 0 is a valid index. This poses a slight problem because -1 is truthy, meaning that it will evaluate to true when converted to a boolean. You are probably familiar with the following gotcha when using String.indexOf:
+JS functions that normally return tuple indices often use -1 to indicate an error, since 0 is a valid index. This poses a slight problem because -1 is truthy, meaning that it will evaluate to true when converted to a boolean. You're probably familiar with the following gotcha when using String.indexOf:
 
 {% highlight javascript %}
-var str = "James Blaylock";
+var str = "James Blaylock"
 
 // BAD: This code will erroneously log "Bob is in str"
 if (str.indexOf("Bob")) { // -1... TRUE
-  console.log('Bob is in str');
+  console.log("Bob is in str")
 }
 
 // GOOD: This code won't log anything
 if (str.indexOf("Bob") !== -1) { // FALSE
-  console.log('Bob is in str');
+  console.log("Bob is in str")
 }
 {% endhighlight %}
 
 When I first learned about this I simply accepted all of those "!== -1" checks as a necessary evil. Okay, they're really not all that bad. Still, the tilde can help out here a bit. If you remember our formula from earlier, ~-1 is 0 (which is falsey). Conversely ~&lt;anything else&gt; is non-zero (which is truthy). Armed with this knowledge we can refactor those "!== -1" checks like so:
 
 {% highlight javascript %}
-var str = "James Blaylock";
+var str = "James Blaylock"
 
 // GOOD: This code won't log anything
 if (~str.indexOf("Bob")) { // 0... FALSE
-  console.log('Bob is in str');
+  console.log("Bob is in str")
 }
 
 // GOOD: This code code will log "ayl is in str"
 if (~str.indexOf("ayl")) { // -9... TRUE
-  console.log('ayl is in str');
+  console.log("ayl is in str")
 }
 {% endhighlight %}
 

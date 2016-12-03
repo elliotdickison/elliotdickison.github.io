@@ -27,6 +27,7 @@
   height: $gravatar-size;
   padding: 2px;
   width: $gravatar-size;
+  box-shadow: none;
 
   &__img {
     border-radius: 100%;
@@ -238,6 +239,10 @@
 
   &__author-photo {
     float: left;
+  }
+
+  &__author {
+    font-weight: $font-weight-bold;
   }
 
   &__text {

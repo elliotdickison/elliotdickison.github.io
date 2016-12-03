@@ -1,0 +1,267 @@
+/**
+* Wrapper
+*/
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $content-width;
+  padding: 0 $spacing-unit-small;
+
+  &--separator:before {
+    border-top: 2px solid $background-color-alternate;
+    content: '';
+    display: block;
+    margin: $spacing-unit-large auto;
+    width: 50%;
+  }
+}
+
+/**
+* Profile photos
+*/
+
+.profile-photo {
+  border-radius: 100%;
+  display: block;
+  height: $gravatar-size;
+  padding: 2px;
+  width: $gravatar-size;
+
+  &__img {
+    border-radius: 100%;
+    height: 100%;
+    width: 100%;
+  }
+
+  &--small {
+    width: $gravatar-size-small;
+    height: $gravatar-size-small;
+  }
+
+  &--link {
+    border: 2px solid transparent;
+
+    &:hover,
+    &:active {
+      box-shadow: none;
+      border-color: $theme-color;
+    }
+  }
+}
+
+/**
+* Site header
+*/
+
+.site-header {
+  margin: $spacing-unit-large 0 $spacing-unit;
+  text-align: center;
+
+  .profile-photo {
+    display: inline-block;
+  }
+
+  &--small {
+    margin: $spacing-unit 0 $spacing-unit-small;
+  }
+}
+
+/**
+* Site footer
+*/
+
+.site-footer {
+  font-size: $font-size-small;
+  margin-top: 0;
+  overflow: hidden; /* Clearfix floated content */
+  padding-bottom: $spacing-unit-large;
+}
+
+.bio {
+  float: left;
+  max-width: 50%;
+
+  @include media-query($on-mobile) {
+    float: none;
+    max-width: none;
+  }
+}
+
+.contact-links {
+  float: right;
+  list-style: none;
+  margin: 0 0 0 1rem;
+  text-align: right;
+  text-transform: lowercase;
+  white-space: nowrap;
+
+  @include media-query($on-mobile) {
+    float: none;
+    margin: $spacing-unit 0 0;
+    text-align: left;
+  }
+}
+
+/**
+* Page content
+*/
+
+.page-content {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+* Posts
+*/
+
+.post {
+
+  &__title a {
+    color: inherit;
+
+    @include text-underline(2px, -2px);
+    @include text-clear-descendors(3px);
+
+    .wf-active & {
+      @include text-underline(2px, -6px);
+
+      @include media-query($on-mobile) {
+        @include text-underline(2px, -5px);
+      }
+    }
+  }
+
+  &--stacked + &--stacked {
+    margin-top: $spacing-unit * 1.5;
+  }
+
+  &--stacked &__meta {
+    float: right;
+    margin-left: $spacing-unit;
+
+    @include media-query($on-mobile) {
+      display: block;
+      float: none;
+      margin-left: 0;
+    }
+  }
+
+  &__meta {
+    color: $text-color-secondary;
+    font-family: $font-family;
+    font-size: $font-size-small;
+    font-weight: 300;
+  }
+
+  &__author {
+    display: none;
+  }
+
+  &__link {
+    color: inherit;
+  }
+
+  &__link__external-label {
+    color: $text-color-secondary;
+    font-size: $font-size-small;
+    font-weight: $font-weight;
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__title {
+    line-height: 1.2em;
+  }
+
+  &__summary {
+    font-size: $font-size-small;
+    font-style: italic;
+    margin-top: 0;
+  }
+
+  &__footnote {
+    color: $text-color-secondary;
+    display: block;
+    font-size: $font-size-small;
+    margin-top: $spacing-unit-small;
+  }
+
+  @include media-query($on-mobile) {
+    &--stacked &__meta {
+      font-size: $font-size-small;
+      line-height: $font-size;
+    }
+  }
+}
+
+/**
+* Post mentions
+*/
+
+.mentions {
+  margin-top: 0;
+
+  &__list {
+    font-size: $font-size-small;
+
+    &:before {
+      border-top: 2px solid $background-color-alternate;
+      content: '';
+      display: block;
+      margin: $spacing-unit-large auto;
+      width: 50%;
+    }
+
+    * {
+      margin-top: 0;
+    }
+
+    &__item + &__item {
+      margin-top: $spacing-unit-large;
+    }
+  }
+}
+
+.mention {
+
+  &__date {
+    color: $text-color-secondary;
+  }
+
+  &__author-photo {
+    float: left;
+  }
+
+  &__text {
+    margin-left: $gravatar-size-small;
+    padding-left: $spacing-unit-small;
+  }
+}
+
+/**
+* Embedded video
+*/
+
+.embedded-video-container {
+  background: #000;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 */
+  position: relative;
+
+  iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  @include media-query($on-mobile) {
+    margin-left: -$spacing-unit-small;
+    margin-right: -$spacing-unit-small;
+  }
+}

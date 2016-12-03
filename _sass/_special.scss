@@ -1,6 +1,6 @@
 /**
-* Wrapper
-*/
+ * Wrapper
+ */
 
 .wrapper {
   margin-left: auto;
@@ -18,8 +18,8 @@
 }
 
 /**
-* Profile photos
-*/
+ * Profile photos
+ */
 
 .profile-photo {
   border-radius: 100%;
@@ -51,8 +51,8 @@
 }
 
 /**
-* Site header
-*/
+ * Site header
+ */
 
 .site-header {
   margin: $spacing-unit-large 0 $spacing-unit;
@@ -68,14 +68,18 @@
 }
 
 /**
-* Site footer
-*/
+ * Site footer
+ */
 
 .site-footer {
   font-size: $font-size-small;
   margin-top: 0;
   overflow: hidden; /* Clearfix floated content */
   padding-bottom: $spacing-unit-large;
+}
+
+.site-footer a {
+  color: $theme-color;
 }
 
 .bio {
@@ -104,8 +108,8 @@
 }
 
 /**
-* Page content
-*/
+ * Page content
+ */
 
 .page-content {
   margin: 0;
@@ -113,8 +117,8 @@
 }
 
 /**
-* Posts
-*/
+ * Posts
+ */
 
 .post {
 
@@ -199,8 +203,8 @@
 }
 
 /**
-* Post mentions
-*/
+ * Post mentions
+ */
 
 .mentions {
   margin-top: 0;
@@ -243,8 +247,8 @@
 }
 
 /**
-* Embedded video
-*/
+ * Embedded video
+ */
 
 .embedded-video-container {
   background: #000;

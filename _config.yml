@@ -1,8 +1,7 @@
 title: Elliot Dickison
 email: ejdickison@gmail.com
-
 baseurl: ""
-url: "http://elliotdickison.com"
+url: "elliotdickison.com"
 
 twitter_username: elliotdickison
 github_username:  elliotdickison
@@ -11,7 +10,6 @@ facebook_username: elliotdickison
 app_net_username: elliotdickison
 
 gravatar_hash: 5a4ad376a72eeb6fd3a59400684d54bf
-gravatar_size: 140
 
 defaults:
   -

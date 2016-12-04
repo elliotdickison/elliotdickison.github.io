@@ -59,16 +59,15 @@ a.profile-photo {
  */
 
 .site-header {
-  margin: $spacing-unit-large 0 $spacing-unit;
+  margin: $spacing-unit 0 $spacing-unit-small;
   text-align: center;
+}
 
-  .profile-photo {
-    display: inline-block;
-  }
-
-  &--small {
-    margin: $spacing-unit 0 $spacing-unit-small;
-  }
+a.site-header__logo {
+  display: inline-block;
+  width: 80px;
+  box-shadow: none;
+  text-shadow: none;
 }
 
 /**

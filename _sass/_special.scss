@@ -27,7 +27,6 @@
   height: $gravatar-size;
   padding: 2px;
   width: $gravatar-size;
-  box-shadow: none;
 
   &__img {
     border-radius: 100%;
@@ -49,6 +48,10 @@
       border-color: $theme-color;
     }
   }
+}
+
+a.profile-photo {
+  box-shadow: none;
 }
 
 /**

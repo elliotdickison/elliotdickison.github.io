@@ -2,5 +2,6 @@
 title: "Typefight"
 tags: cool
 summary: "\"Alphabetic Altercations, Figural Fisticuffs\""
-external_link: "http://www.thetypefight.com/"
+redirect: "http://www.thetypefight.com/"
+layout: redirect
 ---

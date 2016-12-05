@@ -2,5 +2,6 @@
 title: "Why Babel Matters"
 tags: javascript
 summary: "Codemix 'splains"
-external_link: "http://codemix.com/blog/why-babel-matters"
+redirect: "http://codemix.com/blog/why-babel-matters"
+layout: redirect
 ---

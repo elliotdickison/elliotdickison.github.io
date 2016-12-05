@@ -3,8 +3,7 @@
 /* fonts */
 $font-family-code: "Anonymous Pro", "Courier", monospace;
 $font-family: "skolar", "Georgia", serif;
-$font-size-code: 0.75rem;
-$font-size-extra-small: 16px;
+$font-size-code: 16px;
 $font-size-small: 19px;
 $font-size: 22px;
 $font-weight: 400;
@@ -23,7 +22,7 @@ $text-color: #33322b;
 $content-width: 700px;
 $gravatar-size: 78px;
 $gravatar-size-small: 60px;
-$spacing-unit: 1.3rem;
+$spacing-unit: 28px;
 $spacing-unit-large: $spacing-unit * 2;
 $spacing-unit-small: $spacing-unit / 2;
 
@@ -78,14 +77,4 @@ background... this is kind of a mess, but the end result looks very nice */
   $background-color 3px 0,
   $background-color 3px #{$amount / 2},
   $background-color 3px #{$amount},
-}
-
-%reset-link {
-  color: inherit;
-
-  &:hover,
-  &:active {
-    box-shadow: none;
-    text-shadow: none;
-  }
 }

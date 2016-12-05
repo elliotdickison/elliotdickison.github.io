@@ -200,7 +200,7 @@ a.site-header__logo {
   @include media-query($on-mobile) {
     &--stacked &__meta {
       font-size: $font-size-small;
-      line-height: $font-size;
+      line-height: 1;
     }
   }
 }

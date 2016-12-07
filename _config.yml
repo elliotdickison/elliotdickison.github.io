@@ -32,4 +32,4 @@ future: false
 highlighter: rouge
 
 # Blog posts get first-class urls
-permalink: /:title
+permalink: /:title/
